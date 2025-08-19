@@ -1,0 +1,1465 @@
+/* Общие сбросы и настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Evolventa', sans-serif;
+    scroll-behavior: smooth;
+    background: #131313;
+}
+
+/* ШАПКА — полностью прозрачная */
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: transparent;
+    border: none;
+}
+
+/* Контейнер шапки с отступами 50px */
+.header-container {
+    max-width: calc(100% - 100px);
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+/* Логотип */
+.logo a {
+    font-size: 25px;
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    flex-shrink: 0;
+}
+
+/* Бриф — с отступом 20% от левого края */
+.brief-link {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    text-underline-offset: 4px;
+    font-size: 1.1rem;
+    margin-left: 20%;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    flex-shrink: 0;
+}
+.brief-link:hover {
+    color: #CB733B;
+    text-decoration-color: #CB733B;
+}
+
+/* Правая часть — главное решение: flex с промежутком */
+.header-right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    min-width: 0;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+/* Обёртка для меню и кнопки с отступом 20% между ними */
+.header-right-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+/* Добавим контейнер, который создаёт 20% отступ */
+.header-nav-spacer {
+    flex: 0 0 20%;
+    min-width: 20px;
+}
+
+/* Группа: меню + кнопка */
+.header-group {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-shrink: 0;
+}
+
+/* Меню */
+.nav {
+    display: flex;
+    gap: 30px;
+    flex-shrink: 0;
+    margin-right: 150px;
+}
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+.nav a:hover {
+    color: #CB733B;
+}
+
+/* Кнопка */
+.header-action {
+    flex-shrink: 0;
+}
+.header-action .btn-talk {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    text-underline-offset: 4px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    text-transform: none;
+}
+.header-action .btn-talk:hover {
+    color: #CB733B;
+    text-decoration-color: #CB733B;
+}
+
+/* Блок Hero */
+.hero {
+    width: 100%;
+    height: 100vh;
+    background-image: url('/assets/Hero.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    padding-top: 80px;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.hero-content {
+    z-index: 2;
+    padding: 20px;
+}
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+.hero p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Контентный блок в hero — прижат к правой части */
+.hero-content-bottom {
+    position: absolute;
+    top: 30%;
+    right: 50px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 3;
+}
+
+/* Текст "Artem Artomov" */
+.content-text {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 25px;
+    text-decoration: none;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+}
+
+/* Прочерк — анимация появления слева направо */
+.content-line {
+    position: relative;
+    width: 371px;
+    height: 1px;
+    background-color: transparent;
+    box-shadow: none;
+    overflow: hidden;
+}
+.content-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+    transition: width 1.2s ease-out;
+}
+.hero-content-bottom .content-line::after {
+    animation: drawLine 1.2s ease-out 0.5s forwards;
+}
+@keyframes drawLine {
+    from { width: 0; }
+    to { width: 371px; }
+}
+
+/* Картинка профиля */
+.profile-pic {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Блок с заголовком и скиллами */
+.hero-skills {
+    position: absolute;
+    top: 70%;
+    left: 50px;
+    width: calc(100% - 100px);
+    z-index: 3;
+}
+.skills-title {
+    padding: 0 30px;
+    color: #fff;
+    font-size: 45px !important;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    width: 90%;
+    text-align: left;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+.skills-row {
+    padding: 0 30px;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+    flex-wrap: nowrap;
+}
+.skill-tag {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+.skill-tag:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* === БЛОК "МОЇ РОБОТИ" === */
+.portfolio {
+    padding: 50px;
+    background: #131313;
+    color: #fff;
+}
+.portfolio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.section-title {
+    padding: 0 30px;
+    font-size: 55px;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+.controls button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.controls button:hover {
+    color: #CB733B;
+}
+
+/* === КАРУСЕЛЬ === */
+.carousel {
+    display: flex;
+    gap: 30px;
+    max-width: calc(100% - 100px);
+    margin: 30px;
+}
+.carousel-main {
+    flex: 3;
+    position: relative;
+    height: 0;
+    padding-bottom: 60%;
+    overflow: hidden;
+    border-radius: 12px;
+    object-fit: cover;
+}
+.carousel-main img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    z-index: 1;
+}
+.carousel-main img.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 2;
+}
+.carousel-preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.carousel-preview img {
+    width: 100%;
+    height: 40%;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.carousel-preview img:hover {
+    transform: scale(1.05);
+    border-color: #CB733B;
+}
+
+/* === Текст под изображениями === */
+.project-title {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.4;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    white-space: pre-line;
+}
+.main-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+.preview-title {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* === БЛОК "ПРИНЦИПИ РОБОТИ" === */
+.principles {
+    padding: 50px;
+    background: #131313;
+    color: #fff;
+}
+.principles .section-title {
+    padding-left: 30px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+.principles-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+.principle-card {
+    flex: 1;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    height: 450px;
+    padding: 25px;
+    margin: 30px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.principle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: #CB733B;
+}
+.principle-card h3 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+.principle-card h4 {
+    margin-top: 150px;
+    font-size: 35px;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+.principle-card p {
+    margin-top: 50px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* === БЛОК "ЕТАПИ СПІВПРАЦІ" === */
+.stages {
+    padding: 50px 0;
+    background: #131313;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.stages .container {
+    width: 100%;
+    padding: 0 30px;
+}
+.stages .section-title {
+    font-size: 55px;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    padding: 50px;
+}
+.stages .subheading {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: left;
+    padding: 0 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px;
+}
+.accordion-item {
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+.accordion-item:hover {
+    border-color: #CB733B;
+}
+.accordion-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px 0;
+}
+.stage-number {
+    font-size: 128px;
+    font-weight: 500;
+    padding: 30px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    margin-right: 200px;
+    flex-shrink: 0;
+}
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.content h3 {
+    font-size: 35px;
+    color: #fff;
+    text-align: left;
+    margin: 0;
+    font-weight: normal;
+    text-transform: none;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+.accordion-content {
+    padding: 0 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    margin-left: 335px;
+    width: 800px;
+}
+.accordion-item.active .accordion-content {
+    max-height: 1000px;
+    padding: 20px 30px;
+}
+.accordion-content ul {
+    list-style: none;
+    padding: 0;
+}
+.accordion-content li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: left;
+    font-weight: normal;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    margin-left: 35px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* === ИКОНКА + / − === */
+.toggle-icon {
+    font-size: 24px;
+    color: #ffffff;
+    margin-left: auto;
+    margin-right: 30px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+.accordion-item:hover .toggle-icon {
+    transform: scale(1.1);
+}
+
+/* === СТАТИСТИКА В HERO === */
+.hero-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    margin-top: 40px;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+    padding: 30px;
+}
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    padding-left: 24px;
+}
+.stat-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    opacity: 0;
+    animation: fadeInLine 0.8s ease-out 0.2s forwards;
+}
+@keyframes fadeInLine {
+    to { opacity: 1; }
+}
+.stat-number {
+    font-size: 120px;
+    font-weight: 400;
+    line-height: 1em;
+    color: #ffffff;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+.stat-label {
+    font-size: 20px;
+    color: #cccccc;
+    margin-top: 8px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.3s forwards;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === БЛОК ЦІН === */
+.minimal-pricing {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+}
+.pricing-section-title {
+    font-size: 55px;
+    font-weight: 400;
+    color: white;
+    align-self: flex-start;
+    text-transform: uppercase;
+    margin-top: 150px;
+    padding-left: 30px;
+    width: 70%;
+}
+
+.pricing-section-title2 {
+    padding: 30px;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+.pricing-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+}
+.pricing-item {
+    display: flex;
+    align-items: flex-start;
+    flex: 1 1 240px;
+    min-width: 280px;
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+.pricing-item:hover {
+    transform: translateY(-5px);
+}
+.pricing-line {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 1px;
+    height: calc(100% - 48px);
+    min-height: 300px;
+    background-color: white;
+    opacity: 0.2;
+}
+.pricing-text {
+    margin-left: 18px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.pricing-title {
+    font-size: 35px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.pricing-subtitle {
+    font-size: 18px;
+    color: #ddd;
+    line-height: 1.5;
+    margin-bottom: 100px;
+    flex-grow: 1;
+}
+.pricing-time {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+.pricing-price {
+    font-size: 35px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 0;
+}
+
+
+/* === Футер карточки: цена + стрелка === */
+.pricing-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.pricing-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.pricing-link:hover {
+  background: #e0854f;
+  transform: scale(1.1);
+}
+
+.pricing-link svg {
+  width: 48px;
+  height: 48px;
+  font-weight: 400;
+}
+
+
+
+/* === БЛОК "КОНТАКТИ" === */
+.contact-section {
+  padding: 100px 50px 0;
+  color: #fff;
+  position: relative;
+}
+.contact-container {
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.contact-title {
+  font-size: 55px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  line-height: 1.2;
+}
+
+.contact-subtitle {
+  font-size: 18px;
+  color: #ddd;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 900px;
+}
+
+/* Кнопки соцсетей */
+.contact-buttons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: flex;
+  padding: 16px 32px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 30px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.contact-btn:hover {
+  border-color: #CB733B;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.btn-telegram:hover { color: #CB733B; }
+.btn-whatsapp:hover { color: #CB733B; }
+.btn-email:hover { color: #CB733B; }
+
+/* Текст и телефон */
+.contact-call-text {
+  font-size: 18px;
+  color: #ddd;
+  margin-bottom: 16px;
+  max-width: 600px;
+}
+
+.contact-phone {
+  font-size: 55px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 60px;
+}
+
+.contact-phone a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-phone a:hover {
+  color: #CB733B;
+}
+
+/* Разделительная полоска */
+.contact-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+    margin-bottom: 40px;
+}
+
+/* Подвал */
+.contact-footer {
+  text-align: center;
+  padding: 20px;
+  color: #bbb;
+  font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================
+   АДАПТИВНЫЕ СТИЛИ — ОБЪЕДИНЁННЫЕ МЕДИА-ЗАПРОСЫ
+   ======================================== */
+
+@media (max-width: 1920px) {
+
+    .brief-link {
+        margin-left: 10%;
+        font-size: 1rem;
+    }
+    .nav {
+        margin-right: 80px;
+        gap: 20px;
+    }
+    .nav a {
+        font-size: 15px;
+    }
+    .header-action .btn-talk {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1180px) {
+
+    .mobile-menu {
+        position: fixed;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: #111;
+        padding: 40px 20px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .mobile-menu.open {
+        transform: translateX(0);
+    }
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    .mobile-nav a {
+        color: #fff;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 1.5rem;
+        text-transform: none;
+        letter-spacing: 0.5px;
+        transition: color 0.3s ease;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    }
+    .mobile-nav a:hover,
+    .mobile-nav a.active {
+        color: #CB733B;
+    }
+    .mobile-nav .btn-talk {
+        color: #fff;
+        text-decoration: underline;
+        text-decoration-color: #fff;
+        text-underline-offset: 4px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-transform: none;
+    }
+    .mobile-nav .btn-talk:hover {
+        color: #CB733B;
+        text-decoration-color: #CB733B;
+    }
+    .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 28px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 1100;
+    }
+    .burger span {
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        border-radius: 1px;
+        transition: all 0.3s ease;
+        position: relative;
+        transform-origin: left;
+    }
+    .burger.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .burger.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .burger.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+    .burger {
+        display: flex;
+        cursor: pointer;
+        z-index: 1100;
+    }
+    .brief-link,
+    .header-right {
+        display: none;
+    }
+    .header-container {
+        margin: 10px;
+        max-width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo a {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .principles-grid {
+        gap: 20px;
+    }
+    .principle-card {
+        padding: 20px;
+    }
+    .principle-card h3 {
+        font-size: 1.8rem;
+    }
+    .principle-card h4 {
+        font-size: 1.2rem;
+    }
+    .profile-pic {
+        width: 250px;
+        height: 250px;
+    }
+    .hero-content-bottom {
+        right: 30px;
+        gap: 15px;
+    }
+    .content-text {
+        font-size: 20px;
+    }
+    .content-line {
+        width: 250px;
+    }
+    .hero-skills {
+        left: 30px;
+        top: 65%;
+    }
+    .skills-title {
+        font-size: 20px !important;
+        width: 75%;
+    }
+    .skill-tag {
+        font-size: 0.9rem;
+        padding: 7px 14px;
+    }
+    .portfolio {
+        padding: 30px;
+    }
+    .section-title {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .pricing-section-title2 {
+        padding: 0px;
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .pricing-footer {
+        margin-top: 12px;
+    }
+    .pricing-link {
+        width: 36px;
+        height: 36px;
+    }
+    .pricing-link svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: #111;
+        padding: 40px 20px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .mobile-menu.open {
+        transform: translateX(0);
+    }
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    .mobile-nav a {
+        color: #fff;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 1.5rem;
+        text-transform: none;
+        letter-spacing: 0.5px;
+        transition: color 0.3s ease;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    }
+    .mobile-nav a:hover,
+    .mobile-nav a.active {
+        color: #CB733B;
+    }
+    .mobile-nav .btn-talk {
+        color: #fff;
+        text-decoration: underline;
+        text-decoration-color: #fff;
+        text-underline-offset: 4px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-transform: none;
+    }
+    .mobile-nav .btn-talk:hover {
+        color: #CB733B;
+        text-decoration-color: #CB733B;
+    }
+    .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 28px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 1100;
+    }
+    .burger span {
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        border-radius: 1px;
+        transition: all 0.3s ease;
+        position: relative;
+        transform-origin: left;
+    }
+    .burger.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .burger.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .burger.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+    .hero-content-bottom {
+        right: 10px;
+        gap: 12px;
+        top: 20%;
+    }
+    .content-text {
+        font-size: 16px;
+    }
+    .content-line {
+        width: 50px;
+        height: 1px;
+    }
+    .hero-skills {
+        top: 40%;
+        left: 20px;
+        width: calc(100% - 40px);
+    }
+    .skills-title {
+        padding: 0;
+        line-height: 1.3;
+        width: 90%;
+    }
+    .skills-row {
+        padding: 0;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .skill-tag {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+
+    .principles {
+        padding: 10px;
+    }
+    .principles-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .principles .section-title {
+        padding-left: 0;
+        font-size: 28px;
+    }
+    .principle-card {
+        padding: 20px;
+    }
+    .stage-number {
+        font-size: 80px;
+        margin-right: 20px;
+    }
+    .content h3 {
+        font-size: 24px;
+    }
+    .accordion-content li {
+        font-size: 15px;
+        margin-top: 15px;
+    }
+    .toggle-icon {
+        margin-right: 15px;
+    }
+    .accordion {
+        padding: 0 10px;
+    }
+    .accordion-content,
+    .accordion-item.active .accordion-content {
+        padding: 20px 15px;
+    }
+    .minimal-pricing {
+        padding: 10px;
+        gap: 20px;
+    }
+    .pricing-section-title {
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 0;
+        margin-top: 120px;
+    }
+    .pricing-cards {
+        gap: 20px;
+    }
+    .pricing-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2px;
+    }
+    .pricing-line {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        min-height: auto;
+        margin-bottom: 12px;
+    }
+    .pricing-text {
+        margin-left: 0;
+        margin-top: 12px;
+    }
+    .pricing-title {
+        font-size: 26px;
+    }
+    .pricing-subtitle {
+        font-size: 15px;
+    }
+    .pricing-price {
+        font-size: 26px;
+    }
+    .hero-stats {
+        gap: 40px;
+        padding: 2px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .stat-number {
+        font-size: 80px;
+    }
+    .stat-label {
+        font-size: 18px;
+    }
+    .stat-item {
+        padding-left: 16px;
+    }
+    .portfolio {
+        padding: 20px;
+    }
+    .section-title {
+        margin-left: 0px;
+        padding: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+    }
+    .hero-content-bottom {
+        margin-top: 50px;
+        right: 10px;
+        top: 15%;
+        gap: 8px;
+    }
+    .content-text {
+        font-size: 14px;
+    }
+    .content-line {
+        width: 40px;
+    }
+    .hero-skills {
+        margin-top: 50px;
+        top: 35%;
+        left: 15px;
+    }
+    .skills-title {
+        padding-top: 50px;
+        font-size: 18px !important;
+        width: 95%;
+    }
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+    .mobile-nav a {
+        font-size: 1.3rem;
+    }
+    .portfolio {
+        padding: 10px;
+        padding-top: 50px;
+    }
+    .section-title {
+        margin-left: 5px;
+        font-size: 20px;
+    }
+    .hero {
+        height: 50vh;
+    }
+    .carousel {
+        max-width: 100%;
+        gap: 0;
+        margin: 0;
+    }
+    .carousel-main img {
+        height: 100%;
+    }
+    .carousel-preview img {
+        width: 100%;
+        height: 50%;
+    }
+
+    .principle-card {
+        margin: 0;
+    }
+    .principles .section-title {
+        padding-left: 0;
+        font-size: 20px;
+    }
+    .stages .section-title {
+        font-size: 28px;
+        padding: 10px;
+        margin: 0;
+        margin-top: 50px;
+    }
+    .stages .subheading {
+        font-size: 15px;
+        padding: 10px;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+    .stages .container {
+        padding: 0;
+    }
+    .accordion-content li {
+        font-size: 14px;
+        margin-top: 30px;
+        margin-left: 0;
+    }
+    .accordion-content {
+        margin-left: 0;
+        width: 320px;
+    }
+}
+
+/* Скрываем мобильное меню на десктопе */
+@media (min-width: 1169px) {
+    .mobile-menu {
+        display: none !important;
+    }
+}
+
+/* =========================================================
+   МИКРО-УЛУЧШЕНИЯ / ФИКСЫ (UX/СТАБИЛЬНОСТЬ, БЕЗ СМЕНЫ СТИЛЯ)
+   ========================================================= */
+
+/* Фокус только при клавиатуре — видно, но не ломает дизайн */
+:where(a, button, [role="button"], .carousel-link, .contact-btn, .pricing-link):focus-visible {
+  outline: 2px solid #CB733B;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Крупнее зона клика меню на десктопе, не меняя метрики */
+.nav a { position: relative; }
+.nav a::after { content:""; position:absolute; inset:-6px -8px; }
+
+/* Уважение к предпочтению «уменьшить анимации» */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Карусель — сглаживание переходов превью */
+.carousel-main { overflow:hidden; }
+.carousel-preview img { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+
+/* Герой — страховка минимальной высоты/ширины блоков */
+.hero { min-height: 560px; }
+.hero-content-bottom { max-width: min(90vw, 900px); }
+.hero-skills { max-width: min(96vw, 1400px); }
+
+/* --- ACCORDION HEADER FIX: заголовок не превращается в «колонку» --- */
+.accordion-header .content { 
+  min-width: 0;                 /* разрешает сжатие flex-элемента с h3 */
+}
+.accordion-header .content h3 {
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;      /* переносим только длинные куски */
+}
+
+/* На совсем узких — чуть уменьшаем номер и отступ, чтобы дать место заголовку */
+@media (max-width: 480px) {
+  .stage-number {
+    font-size: 56px;            /* было 80px в правиле для <=768 */
+    padding: 10px;              /* было 30px */
+    margin-right: 12px;         /* было 20px */
+  }
+  .accordion-header { 
+    align-items: flex-start;
+  }
+  .accordion-header .content h3 {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+    .contact-section {
+    padding: 10px;
+  }
+
+  .contact-container {
+    padding: 0px;
+  }
+}
+/* На планшетах — тоже немного ужмём номер */
+@media (min-width: 481px) and (max-width: 768px) {
+  .stage-number {
+    font-size: 68px;            /* перекрывает 80px выше */
+    padding: 16px;
+    margin-right: 16px;
+  }
+  
+  .contact-section {
+    padding: 10px;
+  }
+
+  .contact-container {
+    padding: 0px;
+  }
+}
+
+/* Статистика — мягкая тень и подготовка к анимации */
+.hero-stats { will-change: transform; }
+.stat-number { text-shadow: 0 2px 8px rgba(0,0,0,.35); }
+
+/* Контакты — читаемость и комфорт клика */
+.contact-phone { word-break: keep-all; line-height: 1.1; }
+.contact-subtitle { hyphens: auto; }
+.contact-buttons .contact-btn { touch-action: manipulation; }
+
+/* Z-index согласованность */
+.header { z-index: 1000; }
+.burger { z-index: 1100; }
+.mobile-menu { z-index: 1050; }
+
+/* Кнопки управления каруселью — увеличиваем зону клика */
+.controls button { padding: 6px 10px; }
+
+/* Якоря не перекрываются фикс-хедером */
+.portfolio, .principles, .stages, .minimal-pricing, .contact-section { scroll-margin-top: 90px; }
+
+/* Заголовки — адаптивная типографика без смены стиля */
+.section-title,
+.stages .section-title,
+.pricing-section-title,
+.contact-title {
+  font-size: clamp(20px, 4vw + 12px, 55px);
+}
