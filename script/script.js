@@ -43,9 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     // Массив: каждому изображению — своя ссылка
     const slides = [
-        { img: './assets/1.jpg', link: '#', alt: 'Робота 1' },
-        { img: './assets/2.jpg', link: '#', alt: 'Робота 2' },
-        { img: './assets/3.jpg', link: '#', alt: 'Робота 3' },
+        { img: '../assets/1.jpg', link: '#', alt: 'Робота 1' },
+        { img: '../assets/2.jpg', link: '#', alt: 'Робота 2' },
+        { img: '../assets/3.jpg', link: '#', alt: 'Робота 3' },
       
     ];
 
@@ -226,4 +226,5 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(item);
     });
 });
+
 
