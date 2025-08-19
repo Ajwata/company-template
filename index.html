@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Evolventa:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="/">Company</a>
+    </div>
+
+    <div class="header-right">
+      <nav class="nav">
+        <a href="#services">Як ми працюемо</a>
+        <a href="#pricing">Вартість</a>
+        <a href="#portfolio">Портфоліо</a>
+        <a href="#contacts">Контакти</a>
+      </nav>
+      <div class="header-action">
+        <a href="#" target="_blank" rel="noopener" class="btn-talk">Обговорити проект</a>
+      </div>
+    </div>
+
+    <div class="burger" id="burger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-nav">
+      <a href="#services">Як ми працюемо</a>
+      <a href="#pricing">Вартість</a>
+      <a href="#portfolio">Портфоліо</a>
+      <a href="#contacts">Контакти</a>
+      <a href="#" target="_blank" rel="noopener" class="btn-talk">Обговорити проект</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content-bottom">
+    <div class="content-text">Company Name</div>
+    <div class="content-line"></div>
+    <img src="/assets/profile_picture.png" alt="Artem Artomov" class="profile-pic" loading="lazy" decoding="async">
+  </div>
+
+  <div class="hero-skills">
+    <h1 class="skills-title">— UX/UI дизайнер. Створюю функціональні та стильні веб-сайти з використанням програмування</h1>
+    <div class="skills-row">
+      <span class="skill-tag">Figma</span>
+      <span class="skill-tag">HTML</span>
+      <span class="skill-tag">CSS</span>
+      <span class="skill-tag">JavaScript</span>
+      <span class="skill-tag">UI/UX</span>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <div class="portfolio-header">
+    <h2 class="section-title">Наші роботи</h2>
+    <div class="controls">
+      <button class="prev-btn" aria-label="Попередній слайд">&larr;</button>
+      <button class="next-btn" aria-label="Наступний слайд">&rarr;</button>
+    </div>
+  </div>
+
+  <div class="carousel">
+    <div class="carousel-main">
+      <a href="/project1.html" class="carousel-link">
+        <img src="/assets/1.jpg" alt="Робота 1" data-index="0" loading="lazy" decoding="async">
+      </a>
+    </div>
+    <div class="carousel-preview">
+      <a href="https://vidlyry-jeans.com/" class="carousel-link" target="_blank" rel="noopener">
+        <img src="/assets/2.jpg" alt="Превью 2" data-index="1" loading="lazy" decoding="async">
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <span id="counter-years" class="stat-number">0</span>
+      <span class="stat-label">років досвіду</span>
+    </div>
+    <div class="stat-item">
+      <span id="counter-projects" class="stat-number">0</span>
+      <span class="stat-label">проектів запущено</span>
+    </div>
+  </div>
+</section>
+
+<section class="principles" id="principles">
+  <div class="container">
+    <h2 class="section-title">Принципи роботи</h2>
+    <div class="principles-grid">
+      <div class="principle-card">
+        <h3>01</h3>
+        <h4>Прозорість</h4>
+        <p>Ви з самого початку розумієте, що й коли буде зроблено. Ніяких прихованих умов чи зайвих обіцянок — лише чіткий план і відкритість на кожному етапі.</p>
+      </div>
+      <div class="principle-card">
+        <h3>02</h3>
+        <h4>Якість</h4>
+        <p>Я не гонюся за кількістю. Кожен сайт — це продуманий, адаптивний і функціональний продукт, створений з увагою до деталей.</p>
+      </div>
+      <div class="principle-card">
+        <h3>03</h3>
+        <h4>Комфорт</h4>
+        <p>Співпраця має бути легкою. Я беру на себе технічну частину, щоб ви могли зосередитись на своєму бізнесі без стресу.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stages" id="services">
+  <div class="container">
+    <h2 class="section-title">Етапи співпраці</h2>
+    <p class="subheading">Якість, відповідальність і комфорт — ключові принципи, на яких побудована кожна моя співпраця.</p>
+
+    <div class="accordion">
+      <div class="accordion-item active">
+        <div class="accordion-header">
+          <span class="stage-number">01</span>
+          <div class="content">
+            <h3>Обговорення ідеї та потреб</h3>
+          </div>
+          <span class="toggle-icon">−</span>
+        </div>
+        <div class="accordion-content">
+          <ul>
+            <li>Проводимо детальну консультацію, щоб зрозуміти ваші цілі, побажання та специфіку бізнесу. Обговорюємо функціонал, дизайн і основні завдання сайту.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span class="stage-number">02</span>
+          <div class="content">
+            <h3>Формування технічного завдання</h3>
+          </div>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <ul>
+            <li>На основі консультації складаємо чіткий план робіт і технічне завдання, щоб ви точно знали, що отримаєте в результаті.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span class="stage-number">03</span>
+          <div class="content">
+            <h3>Розробка дизайну</h3>
+          </div>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <ul>
+            <li>Створюємо макети сайту — дизайн сторінок, інтерфейс і візуальні елементи. Ви отримуєте можливість внести правки і затвердити зовнішній вигляд.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span class="stage-number">04</span>
+          <div class="content">
+            <h3>Верстка та програмування</h3>
+          </div>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <ul>
+            <li>Перетворюємо дизайн у працюючий сайт за допомогою HTML, CSS та JavaScript. Забезпечуємо адаптивність і швидку роботу на різних пристроях.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span class="stage-number">05</span>
+          <div class="content">
+            <h3>Тестування і корекції</h3>
+          </div>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <ul>
+            <li>Перевіряємо сайт на різних пристроях і браузерах, виправляємо помилки, вносимо остаточні правки згідно з вашими побажаннями.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span class="stage-number">06</span>
+          <div class="content">
+            <h3>Запуск і підтримка</h3>
+          </div>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <ul>
+            <li>Допомагаємо з розміщенням сайту на хостингу і налаштуванням домену. За потреби забезпечуємо технічну підтримку і оновлення.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="minimal-pricing" id="pricing">
+  <h2 class="pricing-section-title">Розробляю сайти під ключ<br></h2>
+  <p class="pricing-section-title2" style="color: white;">
+    Фінальна вартість і терміни визначаються після повного ознайомлення з роботою.<br>
+    Створюю сайти, які швидко працюють, зручно керуються та добре виглядають на всіх пристроях.
+  </p>
+
+  <div class="pricing-cards">
+    <div class="pricing-item">
+      <div class="pricing-line"></div>
+      <div class="pricing-text">
+        <h3 class="pricing-title">Односторiнковий <br> сайт</h3>
+        <p class="pricing-subtitle">Невеликий сайт для компаній, де потрібно швидко протестувати гіпотезу або продукт для отримання заявок.</p>
+        <p class="pricing-time">5-7 днiв</p>
+        <div class="pricing-footer">
+          <p class="pricing-price">вiд 5 000 грн</p>
+          <a href="https://t.me/ajwata" target="_blank" rel="noopener" class="pricing-link" aria-label="Написати в Telegram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 5L19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-item">
+      <div class="pricing-line"></div>
+      <div class="pricing-text">
+        <h3 class="pricing-title">Багатосторінковий <br> сайт</h3>
+        <p class="pricing-subtitle">Веб-сайт з більш складною структурою, де потрібно розповісти про продукт, послуги, компанію та команду.</p>
+        <p class="pricing-time">7-14 днiв</p>
+        <div class="pricing-footer">
+          <p class="pricing-price">вiд 12 000 грн</p>
+          <a href="https://t.me/ajwata" target="_blank" rel="noopener" class="pricing-link" aria-label="Написати в Telegram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 5L19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-item">
+      <div class="pricing-line"></div>
+      <div class="pricing-text">
+        <h3 class="pricing-title">Інтернет <br>магазин</h3>
+        <p class="pricing-subtitle">Онлайн-магазин на платформі Хорошоп — онлайн-оплата, підтримка та зручне управління каталогом товарів.</p>
+        <p class="pricing-time">10-30 днiв</p>
+        <div class="pricing-footer">
+          <p class="pricing-price">вiд 15 000 грн</p>
+          <a href="https://t.me/ajwata" target="_blank" rel="noopener" class="pricing-link" aria-label="Написати в Telegram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 5L19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contacts">
+  <div class="contact-divider"></div>
+  <div class="contact-container">
+    <h2 class="contact-title">Залишились питання чи вже готові стартувати?</h2>
+    <p class="contact-subtitle">
+      Я завжди на зв’язку — для ідей, консультацій або запуску вашого проєкту.<br>
+      Пишіть, дзвоніть або передавайте через голуба (жартуємо — краще в месенджер чи на пошту)
+    </p>
+
+    <div class="contact-buttons">
+      <a href="#" target="_blank" rel="noopener" class="contact-btn btn-telegram">Telegram</a>
+      <a href="#" target="_blank" rel="noopener" class="contact-btn btn-whatsapp">WhatsApp</a>
+      <a href="#" target="_blank" rel="noopener" class="contact-btn btn-email">Viber</a>
+    </div>
+
+    <p class="contact-call-text">Якщо не довіряєте соцмережам — просто подзвоніть. Я ще пам’ятаю, як це робиться</p>
+    <p class="contact-phone">
+      <a href="tel:+380970312970">+1 (000) 000-00-00</a>
+    </p>
+  </div>
+
+  <div class="contact-divider"></div>
+  <div class="contact-footer">
+    <p>© Company 2025</p>
+  </div>
+</section>
+
+<script src="/script/script.js"></script>
+</body>
+</html>
